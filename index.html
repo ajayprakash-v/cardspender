@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="aos.css">
+	<script src="aos.js"></script>
+	<script src="gsap.js"></script>
+	<script src="scrolltrigger.js"></script>
+</head>
+<body>
+	<section>
+		<nav style="display:flex;align-items: center;justify-content: space-between;">
+			<div style="display:flex;align-items: center;">
+			<div data-aos='fade-right' style="display: flex;align-items: center;">
+				<img src="logo.png" style="width:2vw;margin-right: .5vw;min-width: 12px;">
+				<span style="font-size: clamp(8px, .9vw, 5vw);font-weight: bold;">Cardspender</span>
+			</div>
+			<a href="" data-aos='fade-right' data-aos-duration=1400>For shopper</a>
+			<a href="" data-aos='fade-right' data-aos-duration=1600>For Merchant</a>
+		</div>
+			<button data-aos='fade-right' data-aos-duration=1800>Get started</button>
+		</nav>
+		<div style="display:flex;align-items:center;justify-content: space-around;width: 100%;" id="hero1">
+			<div style="padding-left: 10vw;">
+				<h1 data-aos='fade-up'>Make your <br> shopping <span style="color: green;">profit</span></h1>
+				<p data-aos='fade-up' data-aos-duration=1200>Introducing the [Your Bank's Name] Platinum Rewards Card – your passport to financial freedom and unparalleled perks! Experience the epitome of convenience and security as you embark on a seamless journey towards your dreams.</p>
+				<button data-aos='fade-up' data-aos-duration=1400>Get started</button>
+			</div>
+			<div>
+				<img src="1.png" data-aos='zoom-in'>
+			</div>
+		</div>
+	</section>
+	<section id="sec2" style="background-color: #002E12;display: grid;place-items: center;">
+		<h1 style="color:white;letter-spacing: 5px;text-align: center;padding: 3vw;">Welcome to <span style="color:lightgreen"> the era </span> <br> of mobile payments</h1>
+		<button>Get started</button>
+		<div style="display:grid;place-items: center;position: relative;">
+			<img src="world.png" style="scale: .7;background-color:white;border-radius: 50%;width: 50vw;" id="world">
+			<img src="c.png" style="position: absolute;width: 17vw;transform: translateY(400px);" id="card">
+			<img src="m.png" style="position: absolute;width: 20vw;transform: translateY(200px);" id="mobile">
+		</div>
+	</section>
+	<section></section>
+	<script>
+		AOS.init()
+		gsap.registerPlugin('scrollTrigger')
+		gsap.to('#world',{
+			scale:1,
+			duration:2,
+			scrollTrigger:{
+				trigger:'#sec2',
+				start:'top 30%',
+				end:'bottom 120%',
+				scrub:2
+			}
+		})
+		gsap.to('#mobile',{
+			y:-100,
+			duration:2,
+			scrollTrigger:{
+				trigger:'#sec2',
+				start:'top 30%',
+				end:'bottom 150%',
+				scrub:2
+			}
+		})
+		gsap.to('#card',{
+			y:-100,
+			x:100,
+			rotate:40,
+			duration:2,
+			scrollTrigger:{
+				trigger:'#sec2',
+				start:'top 30%',
+				end:'bottom 100%',
+				scrub:2
+			}
+		})
+	</script>
+</body>
+</html>
